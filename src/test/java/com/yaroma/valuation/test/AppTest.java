@@ -2,9 +2,11 @@ package com.yaroma.valuation.test;
 
 import com.yaroma.SpringFactory;
 import com.yaroma.valuation.model.Customer;
+import com.yaroma.valuation.model.Software;
 import com.yaroma.valuation.model.Stat;
 import com.yaroma.valuation.model.User;
 import com.yaroma.valuation.service.CustomerService;
+import com.yaroma.valuation.service.SoftwareService;
 import com.yaroma.valuation.service.StatService;
 import com.yaroma.valuation.service.UserService;
 import java.util.Date;
@@ -73,9 +75,28 @@ public class AppTest {
         System.out.println("create project done. Project id: " + customer.getId());
 
         customerService.deleteCustomer(customer);
-        System.out.println("Delete project done!");      
+        System.out.println("Delete project done!");
+        
+        // Software service test. -----------------------------------------------       
+        System.out.println("Project service test.");
+        SoftwareService softwareService = (SoftwareService) SpringFactory.getspringApplicationContext().getBean("softwareService");
+        Software software = new Software();
+        software.setId(0);
+        software.setName("Software test");
+        software.setLicense("GPL");
+        software.setLicensePrice(0);
+        software.setCopyPrice(1000);
+        software.setSupportPrice(500);
+        software.setTotal(100);
+        software.setDate(new Date());
 
-        // Stat service test. -----------------------------------------------       
+        softwareService.createSoftware(software);
+        System.out.println("create software done. Software id: " + customer.getId());
+
+        softwareService.deleteSoftware(software);
+        System.out.println("Delete software done!");
+
+        // Stat service test. --------------------------------------------------      
         System.out.println("Link service test.");
         StatService statService = (StatService) SpringFactory.getspringApplicationContext().getBean("statService");
         Stat stat = new Stat();

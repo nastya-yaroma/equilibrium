@@ -11,6 +11,7 @@
     
     <mapping class="com.yaroma.valuation.model.User" />
     <mapping class="com.yaroma.valuation.model.Customer" />
+    <mapping class="com.yaroma.valuation.model.Software" />
     <mapping class="com.yaroma.valuation.model.Stat" />
   </session-factory>
 </hibernate-configuration>

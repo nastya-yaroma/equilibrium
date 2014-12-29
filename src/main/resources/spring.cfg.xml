@@ -13,6 +13,9 @@
     
     <bean id="customerService"
           class="com.yaroma.valuation.service.implementation.CustomerServiceImplementation"/>
+    
+    <bean id="softwareService"
+          class="com.yaroma.valuation.service.implementation.SoftwareServiceImplementation"/>
        
     <bean id="statService"
           class="com.yaroma.valuation.service.implementation.StatServiceImplementation"/>

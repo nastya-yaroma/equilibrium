@@ -18,33 +18,36 @@ public class Software {
     
     private int id;
     private String name;
-    private String licence;
-    private int licencePrice;
+    private String license;
+    private int licensePrice;
     private int copyPrice;
     private int supportPrice;
     private int total;
     private Date date;
+    private int userId;
     
     public Software(){
         id = 0;
         name = DEFAULT_NAME;
-        licence  = DEFAULT_LICENCE;
-        licencePrice = 0;
+        license  = DEFAULT_LICENCE;
+        licensePrice = 0;
         copyPrice = 0;
         supportPrice = 0;
         total = 0;
-        date = new Date();        
+        date = new Date();
+        userId = 0;
     }
     
-    public Software(String name, String licence, int licencePrice, int copyPrice, int supportPrice, int total){
+    public Software(String name, String licence, int licencePrice, int copyPrice, int supportPrice, int total, int userId){
         id = 0;
         this.name = name;
-        this.licence  = licence;
-        this.licencePrice = licencePrice;
+        this.license  = licence;
+        this.licensePrice = licencePrice;
         this.copyPrice = copyPrice;
         this.supportPrice = supportPrice;
         this.total = total;
         date = new Date();
+        this.userId = userId;
     }
 
     @Id
@@ -68,22 +71,22 @@ public class Software {
         this.name = name;
     }
 
-    @Column (name="LICENCE")    
-    public String getLicence() {
-        return licence;
+    @Column (name="LICENSE")    
+    public String getLicense() {
+        return license;
     }
 
-    public void setLicence(String licence) {
-        this.licence = licence;
+    public void setLicense(String license) {
+        this.license = license;
     }
 
-    @Column (name="LICENCE_PRICE")     
-    public int getLicencePrice() {
-        return licencePrice;
+    @Column (name="LICENSE_PRICE")     
+    public int getLicensePrice() {
+        return licensePrice;
     }
 
-    public void setLicencePrice(int licencePrice) {
-        this.licencePrice = licencePrice;
+    public void setLicensePrice(int licencePrice) {
+        this.licensePrice = licencePrice;
     }
 
     @Column (name="COPY_PRICE")     
@@ -122,4 +125,13 @@ public class Software {
         this.date = date;
     }
 
+    @Column (name="USER_ID") 
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+    
 }

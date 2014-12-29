@@ -53,7 +53,7 @@
                 <tr>
                     <td>Current user software</td>
                     <td>
-                        <form action="tasks-menu.jsp">
+                        <form action="software-menu.jsp">
                             <button class="btn btn-info btn-block" type="submit">
                                 <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Software menu
                             </button> 
@@ -100,7 +100,7 @@
 
             </table>
 
-            <form class="form-signin" method="GET" action="/valuation/webresources/logout">
+            <form class="form-signin" method="GET" action="/equilibrium/webresources/logout">
                 <button class="btn btn-info" type="submit">
                     <span class="glyphicon glyphicon-off"></span> Log out
                 </button>

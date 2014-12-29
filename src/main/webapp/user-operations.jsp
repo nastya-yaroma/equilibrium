@@ -1,7 +1,7 @@
-<%@page import="com.zyazeva.valuation.model.User"%>
-<%@page import="com.zyazeva.SpringFactory"%>
-<%@page import="com.zyazeva.SessionBean"%>
-<%@page import="com.zyazeva.SessionBean"%>
+<%@page import="com.yaroma.valuation.model.User"%>
+<%@page import="com.yaroma.SpringFactory"%>
+<%@page import="com.yaroma.SessionBean"%>
+<%@page import="com.yaroma.SessionBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
