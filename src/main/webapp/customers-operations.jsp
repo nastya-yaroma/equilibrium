@@ -53,7 +53,7 @@
                         </td>
 
                         <td>
-                            <form action="projects-menu.jsp">
+                            <form action="customers-menu.jsp">
                                 <button class="btn btn-info">
                                     <span class="glyphicon glyphicon-user"></span> Back to users menu
                                 </button>
