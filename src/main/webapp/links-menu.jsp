@@ -100,7 +100,7 @@
                                 out.write("<td>" + tempSoftware.getLicense() + "</td>");
                                 //totalHours = totalHours + tem.pSoftware;
 
-                                out.write("<td>" + tempSoftware.getLicensePrice() + "</td>");
+                                out.write("<td>" + tempSoftware.getLicensePrice()+ "</td>");
                                 out.write("<td>" + tempSoftware.getCopyPrice() + "</td>");
                                 out.write("<td>" + tempSoftware.getTotal()+ "</td>");
 
