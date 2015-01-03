@@ -1,4 +1,4 @@
-<%@page import="com.yaroma.valuation.model.User"%>
+<%@page import="com.yaroma.equilibrium.model.User"%>
 <%@page import="com.yaroma.SpringFactory"%>
 <%@page import="com.yaroma.SessionBean"%>
 <%@page import="com.yaroma.SessionBean"%>
@@ -36,7 +36,7 @@
 
             </h4>
             <br>
-            <form class="form-signin" method="GET" action="/valuation/webresources/users/create">
+            <form class="form-signin" method="GET" action="/equilibrium/webresources/users/create">
             <input name = "paramLogin" type="text" id="login" class="form-control" placeholder="login">   
             <br>
             <input name = "paramName" type="text" id="name" class="form-control" placeholder="name">                          

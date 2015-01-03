@@ -81,6 +81,8 @@ public class UserController {
             
             StatService statService = (StatService) SpringFactory.getspringApplicationContext().getBean("statService");
             statService.createStat(stat);
+            
+            
 
             location = new java.net.URI("../user-menu.jsp");
 
