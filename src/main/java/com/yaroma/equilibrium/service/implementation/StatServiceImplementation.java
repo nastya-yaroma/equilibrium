@@ -1,66 +1,65 @@
-package com.yaroma.valuation.service.implementation;
+package com.yaroma.equilibrium.service.implementation;
 
 import com.yaroma.HibernateFactory;
-import com.yaroma.valuation.model.Software;
-import com.yaroma.valuation.service.SoftwareService;
+import com.yaroma.equilibrium.model.Stat;
+import com.yaroma.equilibrium.service.StatService;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-public class SoftwareServiceImplementation implements SoftwareService {
+public class StatServiceImplementation implements StatService{
 
     @Override
-    public void createSoftware(Software software) {
+    public void createStat(Stat stat) {
         //SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
         SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        session.save(software);
+        session.save(stat);
         session.getTransaction().commit();
         session.close();
     }
 
     @Override
-    public Software readSoftware(int softwareId) {
+    public Stat readTask(int statId) {
         SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        Software software;
-        software = (Software) session.get(Software.class, softwareId);
+        Stat stat = (Stat) session.get(Stat.class, statId);
         session.close();
 
-        return software;
+        return stat;
     }
 
     @Override
-    public void updateSoftware(Software software) {
+    public void updateStat(Stat stat) {
         SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        session.update(software);
+        session.update(stat);
         session.getTransaction().commit();
         session.close();
     }
 
     @Override
-    public void deleteSoftware(Software software) {
+    public void deleteStat(Stat stat) {
         SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        session.delete(software);
+        session.delete(stat);
         session.getTransaction().commit();
         session.close();
     }
 
     @Override
-    public List getAllSoftwares() {
+    public List getAllStats() {
         SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        List softwaresList = session.createCriteria(Software.class).list();
+        List statsList = session.createCriteria(Stat.class).list();
         session.close();
 
-        return softwaresList;
+        return statsList;
     }
     
 }

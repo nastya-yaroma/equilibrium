@@ -1,6 +1,6 @@
-package com.yaroma.valuation.service;
+package com.yaroma.equilibrium.service;
 
-import com.yaroma.valuation.model.Software;
+import com.yaroma.equilibrium.model.Software;
 import java.util.List;
 
 public interface SoftwareService {
@@ -15,4 +15,5 @@ public interface SoftwareService {
 
     List getAllSoftwares();
     
+    Software getSoftwareByName(String name);
 }

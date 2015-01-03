@@ -1,108 +1,109 @@
-package com.yaroma.valuation.service.implementation;
+package com.yaroma.equilibrium.service.implementation;
 
 import com.yaroma.HibernateFactory;
-import com.yaroma.valuation.model.Customer;
-import com.yaroma.valuation.service.CustomerService;
+import com.yaroma.equilibrium.model.User;
+import com.yaroma.equilibrium.service.UserService;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Service;
 
-public class CustomerServiceImplementation implements CustomerService{
+@Service
+public class UserServiceImplementation implements UserService {
+
+    public UserServiceImplementation() {
+
+    }
 
     @Override
-    public void createCustomer(Customer customer) {
-    //SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+    public void createUser(User user) {
+        //SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
         SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        session.save(customer);
+        session.save(user);
         session.getTransaction().commit();
         session.close();
     }
 
     @Override
-    public Customer readCustomer(int customerId) {
+    public User readUser(int userId) {
         SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        Customer customer;
-        customer = (Customer) session.get(Customer.class, customerId);
+        User user;
+        user = (User) session.get(User.class, userId);
         session.close();
 
-        return customer;
+        return user;
     }
 
     @Override
-    public void updateCustomer(Customer customer) {
+    public void updateUser(User user) {
         SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        session.update(customer);
+        session.update(user);
         session.getTransaction().commit();
         session.close();
     }
 
     @Override
-    public void deleteCustomer(Customer customer) {
+    public void deleteUser(User user) {
         SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        session.delete(customer);
+        session.delete(user);
         session.getTransaction().commit();
         session.close();
-    }
-
-    @Override
-    public List getAllCustomers() {
-        SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-        List customersList = session.createCriteria(Customer.class).list();
-        session.close();
-
-        return customersList;
     }
     
     @Override
-    public List getAllCustomersByUserId(Integer userId){
+    public List getAllUsers(){
         SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        List customersList = session.createCriteria(Customer.class).list();
+        List usersList = session.createCriteria(User.class).list();
         session.close();
-        
-        List userCustomersList = new ArrayList();
-        for (int i = 0; i < customersList.size(); i++){
-            Customer customer = (Customer) customersList.get(i);
-            if (customer != null){
-                if (customer.getUserId() == userId){
-                    userCustomersList.add(customer);
-                }    
-            }
-            
-        }
 
-        return userCustomersList;
+        return usersList;
     }
     
     @Override
-    public Customer getCustomerByName(String name) {
+    public User getUserByLogin(String login){
         SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        List customersList = session.createCriteria(Customer.class).list();
+        ArrayList<User> usersList = (ArrayList<User>) session.createCriteria(User.class).list();
         session.close();
         
-        Customer resultCustomer = null;
-        for (int i = 0; i < customersList.size(); i++){
-            Customer customer = (Customer) customersList.get(i);
-            if (customer.getName().equals(name)){
-                resultCustomer = customer;
+        User resultUser = null;
+        for (User user : usersList) {
+            if (user.getLogin().equals(login)) {
+                resultUser = user;
             }
         }
+        
+        return resultUser;
+    }
 
-        return resultCustomer;
+    @Override
+    public boolean CheckUser(String login){
+        SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        ArrayList<User> usersList = (ArrayList<User>) session.createCriteria(User.class).list();
+        session.close();
+        
+        boolean resultFlag = false;
+        for (User user : usersList) {
+            if (user.getLogin().equals(login)) {
+                resultFlag = true;
+            }
+        }
+        
+        return resultFlag;
     }
     
 }

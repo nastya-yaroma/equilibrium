@@ -1,10 +1,10 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
-<%@page import="com.yaroma.valuation.model.Customer"%>
+<%@page import="com.yaroma.equilibrium.model.Customer"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
-<%@page import="com.yaroma.valuation.service.CustomerService"%>
-<%@page import="com.yaroma.valuation.model.User"%>
+<%@page import="com.yaroma.equilibrium.service.CustomerService"%>
+<%@page import="com.yaroma.equilibrium.model.User"%>
 <%@page import="com.yaroma.SpringFactory"%>
 <%@page import="com.yaroma.SessionBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

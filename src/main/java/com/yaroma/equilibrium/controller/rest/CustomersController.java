@@ -1,13 +1,13 @@
-package com.yaroma.valuatiion.controller.rest;
+package com.yaroma.equilibrium.controller.rest;
 
 import com.yaroma.SessionBean;
 import com.yaroma.SpringFactory;
-import com.yaroma.valuation.model.Customer;
-import com.yaroma.valuation.model.Stat;
-import com.yaroma.valuation.model.User;
-import com.yaroma.valuation.service.CustomerService;
-import com.yaroma.valuation.service.StatService;
-import com.yaroma.valuation.service.UserService;
+import com.yaroma.equilibrium.model.Customer;
+import com.yaroma.equilibrium.model.Stat;
+import com.yaroma.equilibrium.model.User;
+import com.yaroma.equilibrium.service.CustomerService;
+import com.yaroma.equilibrium.service.StatService;
+import com.yaroma.equilibrium.service.UserService;
 import java.net.URISyntaxException;
 import java.util.Date;
 import java.util.logging.Level;

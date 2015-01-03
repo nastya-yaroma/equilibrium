@@ -9,9 +9,10 @@
     <property name="hibernate.connection.password">yaroma</property>
     <property name="hibernate.show_sql">true</property>
     
-    <mapping class="com.yaroma.valuation.model.User" />
-    <mapping class="com.yaroma.valuation.model.Customer" />
-    <mapping class="com.yaroma.valuation.model.Software" />
-    <mapping class="com.yaroma.valuation.model.Stat" />
+    <mapping class="com.yaroma.equilibrium.model.User" />
+    <mapping class="com.yaroma.equilibrium.model.Customer" />
+    <mapping class="com.yaroma.equilibrium.model.Software" />
+    <mapping class="com.yaroma.equilibrium.model.Link" />
+    <mapping class="com.yaroma.equilibrium.model.Stat" />
   </session-factory>
 </hibernate-configuration>

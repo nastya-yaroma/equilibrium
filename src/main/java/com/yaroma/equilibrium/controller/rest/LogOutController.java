@@ -1,8 +1,8 @@
-package com.yaroma.valuatiion.controller.rest;
+package com.yaroma.equilibrium.controller.rest;
 
 import com.yaroma.SessionBean;
 import com.yaroma.SpringFactory;
-import com.yaroma.valuation.service.UserService;
+import com.yaroma.equilibrium.service.UserService;
 import java.net.URISyntaxException;
 import java.util.logging.Level;
 import java.util.logging.Logger;

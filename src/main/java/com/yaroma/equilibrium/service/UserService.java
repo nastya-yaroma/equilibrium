@@ -1,6 +1,6 @@
-package com.yaroma.valuation.service;
+package com.yaroma.equilibrium.service;
 
-import com.yaroma.valuation.model.User;
+import com.yaroma.equilibrium.model.User;
 import java.util.List;
 
 public interface UserService {

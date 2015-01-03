@@ -1,6 +1,6 @@
-package com.yaroma.valuation.service;
+package com.yaroma.equilibrium.service;
 
-import com.yaroma.valuation.model.Customer;
+import com.yaroma.equilibrium.model.Customer;
 import java.util.List;
 
 

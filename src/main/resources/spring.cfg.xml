@@ -2,22 +2,25 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
-">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
 
     <bean id="sessionBean"
           class="com.yaroma.SessionBean"/>
             
     <bean id="userService"
-          class="com.yaroma.valuation.service.implementation.UserServiceImplementation"/>
+          class="com.yaroma.equilibrium.service.implementation.UserServiceImplementation"/>
     
     <bean id="customerService"
-          class="com.yaroma.valuation.service.implementation.CustomerServiceImplementation"/>
+          class="com.yaroma.equilibrium.service.implementation.CustomerServiceImplementation"/>
     
     <bean id="softwareService"
-          class="com.yaroma.valuation.service.implementation.SoftwareServiceImplementation"/>
-       
+          class="com.yaroma.equilibrium.service.implementation.SoftwareServiceImplementation"/>
+
+    <bean id="linkService"
+              class="com.yaroma.equilibrium.service.implementation.LinkServiceImplementation"/> 
+           
     <bean id="statService"
-          class="com.yaroma.valuation.service.implementation.StatServiceImplementation"/>
+          class="com.yaroma.equilibrium.service.implementation.StatServiceImplementation"/>
+   
 
 </beans>

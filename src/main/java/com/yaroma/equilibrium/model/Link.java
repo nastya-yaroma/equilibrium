@@ -1,6 +1,5 @@
-package com.yaroma.valuation.model;
+package com.yaroma.equilibrium.model;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,28 +7,27 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
+
 @Entity
-@Table(name = "CUSTOMER")
-public class Customer {
-
-    public static final String DEFAULT_NAME = "default name";
-
+@Table(name = "LINK")
+public class Link {
+    
     private int id;
-    private String name;
-    private Date date;
+    private int customerId;
+    private int softwareId;
     private int userId;
-
-    public Customer() {
+    
+    public Link() {
         id = 0;
-        name = DEFAULT_NAME;
-        date = new Date();
+        customerId = 0;
+        softwareId = 0;
         userId = 0;
     }
-
-    public Customer(String name, String status, Integer userId) {
+    
+    public Link(int customerId, int softwareId, int userId){
         id = 0;
-        this.name = name;
-        date = new Date();
+        this.customerId = customerId;
+        this.softwareId = softwareId;
         this.userId = userId;
     }
 
@@ -45,33 +43,31 @@ public class Customer {
         this.id = id;
     }
 
-    @Column(name = "NAME")
-    public String getName() {
-        return name;
+    @Column(name = "CUSTOMER_ID")
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
-    @Column(name = "DATE")
-    public Date getDate() {
-        return date;
+    @Column(name = "SOFTWARE_ID")
+    public int getSoftwareId() {
+        return softwareId;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setSoftwareId(int softwareId) {
+        this.softwareId = softwareId;
     }
-
+    
     @Column(name = "USER_ID")
     public int getUserId() {
         return userId;
     }
-
-
+    
     public void setUserId(int userId) {
         this.userId = userId;
     }
-    
     
 }

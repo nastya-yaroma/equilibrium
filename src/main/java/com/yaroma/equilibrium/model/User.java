@@ -1,4 +1,4 @@
-package com.yaroma.valuation.model;
+package com.yaroma.equilibrium.model;
 
 import java.util.Date;
 import javax.persistence.Column;

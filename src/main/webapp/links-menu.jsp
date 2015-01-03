@@ -1,14 +1,14 @@
-<%@page import="com.zyazeva.valuation.model.Task"%>
-<%@page import="com.zyazeva.valuation.service.TaskService"%>
-<%@page import="com.zyazeva.valuation.model.Project"%>
-<%@page import="com.zyazeva.valuation.service.ProjectService"%>
+<%@page import="com.yaroma.equilibrium.model.Software"%>
+<%@page import="com.yaroma.equilibrium.service.SoftwareService"%>
+<%@page import="com.yaroma.equilibrium.model.Customer"%>
+<%@page import="com.yaroma.equilibrium.service.CustomerService"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="com.zyazeva.valuation.model.Link"%>
+<%@page import="com.yaroma.equilibrium.model.Link"%>
 <%@page import="java.util.List"%>
-<%@page import="com.zyazeva.valuation.service.LinkService"%>
-<%@page import="com.zyazeva.valuation.model.User"%>
-<%@page import="com.zyazeva.SpringFactory"%>
-<%@page import="com.zyazeva.SessionBean"%>
+<%@page import="com.yaroma.equilibrium.service.LinkService"%>
+<%@page import="com.yaroma.equilibrium.model.User"%>
+<%@page import="com.yaroma.SpringFactory"%>
+<%@page import="com.yaroma.SessionBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,12 +17,12 @@
 
         <link rel="stylesheet" href="resources/css/bootstrap.min.css">
         <script src="resources/js/bootstrap.min.js"></script>
-        <link href="resources/css/valuation.css" rel="stylesheet">
+        <link href="resources/css/links.css" rel="stylesheet">
         <title>Links menu Page</title>
     </head>
     <body>
         <div class="container">
-            <h3>Users menu</h3>
+            <h3>Links menu</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -48,29 +48,31 @@
             <table class="table table-striped">
                 <tr>
                     <th>Link id</th>
-                    <th>Project name</th>
-                    <th>Task name</th>
-                    <th>Hours</th>
-                    <th>Men</th>
-                    <th>Balance</th>
+                    <th>Customer</th>
+                    <th>Software</th>
+                    <th>Licence</th>
+                    <th>Copy</th>
+                    <th>Support</th>
+                    <th>Total</th>
                 </tr>
                 <%
-                    ProjectService projectService = (ProjectService) SpringFactory.getspringApplicationContext().getBean("projectService");
-                    List<Project> projectsList = new ArrayList<>();
-                    projectsList = projectService.getAllProjectsByUserId(userId);
+                    CustomerService customerService = (CustomerService) SpringFactory.getspringApplicationContext().getBean("customerService");
+                    List<Customer> customersList = new ArrayList<>();
+                    customersList = customerService.getAllCustomersByUserId(userId);
+                    out.write("<br>");
+                    out.write("<br>");
 
-                    for (int i = 0; i < projectsList.size(); i++) {
-                        Project project = projectsList.get(i);
-                        if (project != null) {
+                    for (int i = 0; i < customersList.size(); i++) {
+                        Customer customer = customersList.get(i);
+                        if (customer != null) {
                             LinkService linkService = (LinkService) SpringFactory.getspringApplicationContext().getBean("linkService");
                             List<Link> linksList = new ArrayList<>();
-                            linksList = linkService.getAllLinksByProjectId(project.getId());
-
-                            //Sortlist by taskid
+                            linksList = linkService.getAllLinksByCustomerId(customer.getId());
+                            //Sortlist by Software ID
                             for (int b = 0; b < linksList.size() - 1; b++) {
                                 for (int a = 1; a < linksList.size() - b; a++) {
                                     Link tempLink = linksList.get(a);
-                                    if (tempLink.getTaskId() < linksList.get(a - 1).getTaskId()) {
+                                    if (tempLink.getSoftwareId() < linksList.get(a - 1).getSoftwareId()) {
                                         linksList.set(a, linksList.get(a - 1));
                                         linksList.set(a - 1, tempLink);
                                     }
@@ -78,40 +80,37 @@
                             }
 
                             out.write("<tr>");
-                            out.write("<td>" + "Project in list number: " + i + "</td>");
-                            out.write("<td>" + "" + "</td>");
-                            out.write("<td>" + "" + "</td>");
+                            out.write("<td>" + "Customer in list number: " + i + "</td>");
                             out.write("</tr>");
 
                             // Out a cell with current project id
-                            Integer totalHours = 0;
                             Integer totalBalance = 0;
-
                             for (int j = 0; j < linksList.size(); j++) {
                                 Link link = linksList.get(j);
                                 out.write("<tr>");
 
                                 out.write("<td>" + link.getId() + "</td>");
-                                Project tempProject = projectService.readProject(link.getProjectId());
-                                out.write("<td>" + tempProject.getName() + "</td>");
+                                Customer tempCustomer = customerService.readCustomer(link.getCustomerId());
+                                out.write("<td>" + tempCustomer.getName() + "</td>");
 
-                                TaskService taskService = (TaskService) SpringFactory.getspringApplicationContext().getBean("taskService");
-                                Integer taskId = link.getTaskId();
-                                Task tempTask = taskService.readTask(taskId);
-                                out.write("<td>" + tempTask.getName() + "</td>");
-                                out.write("<td>" + tempTask.getHours() + "</td>");
-                                totalHours = totalHours + tempTask.getHours();
+                                SoftwareService softwareService = (SoftwareService) SpringFactory.getspringApplicationContext().getBean("softwareService");
+                                Integer softwareId = link.getSoftwareId();
+                                Software tempSoftware = softwareService.readSoftware(softwareId);
+                                out.write("<td>" + tempSoftware.getName() + "</td>");
+                                out.write("<td>" + tempSoftware.getLicense() + "</td>");
+                                //totalHours = totalHours + tem.pSoftware;
 
-                                out.write("<td>" + tempTask.getMen() + "</td>");
-                                out.write("<td>" + tempTask.getBalance() + "</td>");
-                                totalBalance = totalBalance + tempTask.getBalance();
+                                out.write("<td>" + tempSoftware.getLicensePrice() + "</td>");
+                                out.write("<td>" + tempSoftware.getCopyPrice() + "</td>");
+                                out.write("<td>" + tempSoftware.getTotal()+ "</td>");
 
+                                totalBalance = totalBalance + tempSoftware.getLicensePrice();
+                                totalBalance = totalBalance + tempSoftware.getCopyPrice() * tempSoftware.getTotal();
+                                totalBalance = totalBalance + tempSoftware.getSupportPrice()* tempSoftware.getTotal();
                             }
 
                             out.write("<tr>");
-                            out.write("<td>" + "Total hours: " + totalHours + "</td>");
                             out.write("<td>" + "Total balance " + totalBalance + "</td>");
-                            out.write("<td>" + "" + "</td>");
                             out.write("</tr>");
 
                         }

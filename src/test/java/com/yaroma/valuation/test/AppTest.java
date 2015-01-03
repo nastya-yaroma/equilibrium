@@ -1,15 +1,19 @@
 package com.yaroma.valuation.test;
 
 import com.yaroma.SpringFactory;
-import com.yaroma.valuation.model.Customer;
-import com.yaroma.valuation.model.Software;
-import com.yaroma.valuation.model.Stat;
-import com.yaroma.valuation.model.User;
-import com.yaroma.valuation.service.CustomerService;
-import com.yaroma.valuation.service.SoftwareService;
-import com.yaroma.valuation.service.StatService;
-import com.yaroma.valuation.service.UserService;
+import com.yaroma.equilibrium.model.Customer;
+import com.yaroma.equilibrium.model.Link;
+import com.yaroma.equilibrium.model.Software;
+import com.yaroma.equilibrium.model.Stat;
+import com.yaroma.equilibrium.model.User;
+import com.yaroma.equilibrium.service.CustomerService;
+import com.yaroma.equilibrium.service.LinkService;
+import com.yaroma.equilibrium.service.SoftwareService;
+import com.yaroma.equilibrium.service.StatService;
+import com.yaroma.equilibrium.service.UserService;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import static org.junit.Assert.fail;
 
 import org.junit.Test;
@@ -64,7 +68,7 @@ public class AppTest {
         System.out.println("Delete user done!");
 
         // Customer service test. -----------------------------------------------       
-        System.out.println("Project service test.");
+        System.out.println("Customer service test.");
         CustomerService customerService = (CustomerService) SpringFactory.getspringApplicationContext().getBean("customerService");
         Customer customer = new Customer();
         customer.setId(0);
@@ -72,10 +76,12 @@ public class AppTest {
         customer.setDate(new Date());
 
         customerService.createCustomer(customer);
-        System.out.println("create project done. Project id: " + customer.getId());
+        System.out.println("create customer done. Project id: " + customer.getId());
 
         customerService.deleteCustomer(customer);
-        System.out.println("Delete project done!");
+        System.out.println("Delete customer done!");
+        
+        
         
         // Software service test. -----------------------------------------------       
         System.out.println("Project service test.");
@@ -109,6 +115,21 @@ public class AppTest {
 
         statService.deleteStat(stat);
         System.out.println("Delete stat done!");
+        
+        // Link service test. --------------------------------------------------
+//        Link link = new Link();
+//        link.setId(0);
+//        link.setCustomerId(1);
+//        link.setSoftwareId(2);
+//        link.setUserId(1);
+        
+        LinkService linkService = (LinkService) SpringFactory.getspringApplicationContext().getBean("linkService");
+        //linkService.createLink(link);
+        
+        
+        List linksList = new ArrayList();
+                linksList = linkService.getAllLinksByCustomerId(1);
+                linksList  =null;
         
     }
 }

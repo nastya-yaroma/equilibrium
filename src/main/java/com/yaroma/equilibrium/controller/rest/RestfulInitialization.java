@@ -1,4 +1,4 @@
-package com.yaroma.valuatiion.controller.rest;
+package com.yaroma.equilibrium.controller.rest;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

@@ -1,6 +1,6 @@
 package com.yaroma;
 
-import com.yaroma.valuation.model.User;
+import com.yaroma.equilibrium.model.User;
 
 public class SessionBean {
     

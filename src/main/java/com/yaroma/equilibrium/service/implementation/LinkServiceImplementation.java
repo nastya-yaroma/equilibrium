@@ -1,65 +1,89 @@
-package com.yaroma.valuation.service.implementation;
+package com.yaroma.equilibrium.service.implementation;
 
 import com.yaroma.HibernateFactory;
-import com.yaroma.valuation.model.Stat;
-import com.yaroma.valuation.service.StatService;
+import com.yaroma.equilibrium.model.Link;
+import com.yaroma.equilibrium.service.LinkService;
+import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-public class StatServiceImplementation implements StatService{
+public class LinkServiceImplementation implements LinkService{
 
     @Override
-    public void createStat(Stat stat) {
+    public void createLink(Link link) {
         //SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
         SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        session.save(stat);
+        session.save(link);
         session.getTransaction().commit();
         session.close();
     }
 
     @Override
-    public Stat readTask(int statId) {
+    public Link readLink(int linkId) {
         SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        Stat stat = (Stat) session.get(Stat.class, statId);
+        Link link = (Link) session.get(Link.class, linkId);
         session.close();
 
-        return stat;
+        return link;
     }
 
     @Override
-    public void updateStat(Stat stat) {
+    public void updateLink(Link link) {
         SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        session.update(stat);
+        session.update(link);
         session.getTransaction().commit();
         session.close();
     }
 
     @Override
-    public void deleteStat(Stat stat) {
+    public void deleteLink(Link link) {
         SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        session.delete(stat);
+        session.delete(link);
         session.getTransaction().commit();
         session.close();
     }
 
     @Override
-    public List getAllStats() {
+    public List getAllLinks() {
         SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        List statsList = session.createCriteria(Stat.class).list();
+        List linksList = session.createCriteria(Link.class).list();
         session.close();
 
-        return statsList;
+        return linksList;
+    }
+
+    @Override
+    public List getAllLinksByCustomerId(Integer customerId) {
+        SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        List linksList = session.createCriteria(Link.class).list();
+        session.close();
+        
+        List customerLinksList = new ArrayList();
+        for (int i = 0; i < linksList.size(); i++){
+            Link link = (Link) linksList.get(i);
+            if (link != null){
+                if (link.getCustomerId() == customerId){
+                    customerLinksList.add(link);
+                }    
+            }
+            
+        }
+
+        return customerLinksList;
     }
     
 }
+

@@ -1,6 +1,6 @@
-<%@page import="com.zyazeva.valuation.model.User"%>
-<%@page import="com.zyazeva.SpringFactory"%>
-<%@page import="com.zyazeva.SessionBean"%>
+<%@page import="com.yaroma.equilibrium.model.User"%>
+<%@page import="com.yaroma.SpringFactory"%>
+<%@page import="com.yaroma.SessionBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -9,7 +9,7 @@
 
         <link rel="stylesheet" href="resources/css/bootstrap.min.css">
         <script src="resources/js/bootstrap.min.js"></script>
-        <link href="resources/css/valuation.css" rel="stylesheet">
+        <link href="resources/css/equilibrium.css" rel="stylesheet">
 
         <title>Links operations page</title>
     </head>
@@ -36,10 +36,10 @@
             </h4>
             <br>
 
-            <form class="form-signin" method="GET" action="/valuation/webresources/links/create">
-                <input name = "paramProjectName" type="text" id="login" class="form-control" placeholder="project">   
+            <form class="form-signin" method="GET" action="/equilibrium/webresources/links/create">
+                <input name = "paramCustomerName" type="text" id="login" class="form-control" placeholder="customer">   
                 <br>
-                <input name = "paramTaskName" type="text" id="name" class="form-control" placeholder="task">
+                <input name = "paramSoftwareName" type="text" id="name" class="form-control" placeholder="software">
                 <br>
                 <br>
 

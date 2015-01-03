@@ -1,6 +1,6 @@
-package com.yaroma.valuation.service;
+package com.yaroma.equilibrium.service;
 
-import com.yaroma.valuation.model.Stat;
+import com.yaroma.equilibrium.model.Stat;
 import java.util.List;
 
 public interface StatService {

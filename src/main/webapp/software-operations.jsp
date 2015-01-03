@@ -1,4 +1,4 @@
-<%@page import="com.yaroma.valuation.model.User"%>
+<%@page import="com.yaroma.equilibrium.model.User"%>
 <%@page import="com.yaroma.SpringFactory"%>
 <%@page import="com.yaroma.SessionBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
