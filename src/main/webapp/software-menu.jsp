@@ -21,7 +21,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Software menu</h3>
+            <h3>Меню программного обеспечения</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -44,14 +44,14 @@
 
             <table class="table table-striped">
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>License</th>
-                    <th>License price</th>
-                    <th>Copy price</th>
-                    <th>Support price</th>
-                    <th>Total</th>
-                    <th>Date</th>
+                    <th>Номер</th>
+                    <th>Название</th>
+                    <th>Лицензия</th>
+                    <th>Цена лицензии</th>
+                    <th>Цена копии</th>
+                    <th>Цена поддержки</th>
+                    <th>Итого</th>
+                    <th>Дата</th>
                 </tr>
                 <%
                     SoftwareService softwareService = (SoftwareService) SpringFactory.getspringApplicationContext().getBean("softwareService");
@@ -101,7 +101,7 @@
                     <td>
                         <form action="software-operations.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-folder-open"></span> Software operations
+                                <span class="glyphicon glyphicon-folder-open"></span> Действия над ПО
                             </button>
                         </form>
                     </td>
@@ -111,7 +111,7 @@
                     <td>
                         <form action="main-menu.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-home"></span> Back to main menu
+                                <span class="glyphicon glyphicon-home"></span> Вернуться в главное меню
                             </button>
                         </form>
                     </td>

@@ -16,7 +16,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Equilibrium of software - system. Main menu</h3>
+            <h3>Система равновесия на рынке программных продуктов. Главное меню</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -38,44 +38,44 @@
             <br>
             <table class="table table-striped">
                 <tr>
-                    <th>Description</th>
-                    <th>Menu</th>
+                    <th>Описание</th>
+                    <th>Меню</th>
                 <tr>
-                    <td>Current user customers</td>
+                    <td>Заказчики текущего пользователя</td>
                     <td>
                         <form action="customers-menu.jsp">
                             <button class="btn btn-info btn-block" type="submit">
-                                <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Customers menu
+                                <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Меню заказчиков
                             </button> 
                         </form>
                     </td>
                 </tr>
                 <tr>
-                    <td>Current user software</td>
+                    <td>Программное обеспечение текущего пользователя</td>
                     <td>
                         <form action="software-menu.jsp">
                             <button class="btn btn-info btn-block" type="submit">
-                                <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Software menu
+                                <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Меню ПО
                             </button> 
                         </form>
                     </td>
                 </tr>
                 <tr>
-                    <td>Current user links</td>
+                    <td>Назначения текущего пользователя</td>
                     <td>
                         <form action="links-menu.jsp">
                             <button class="btn btn-info btn-block" type="submit">
-                                <span class="glyphicon glyphicon-link" aria-hidden="true"></span> Links menu
+                                <span class="glyphicon glyphicon-link" aria-hidden="true"></span> Меню назначений
                             </button> 
                         </form>
                     </td>
                 </tr>
                 <tr>
-                    <td>Statistic for all</td>
+                    <td>Общая статистика работы программы</td>
                     <td>
                         <form action="stats-menu.jsp">
                             <button class="btn btn-info btn-block" type="submit">
-                                <span class="glyphicon glyphicon-link" aria-hidden="true"></span> Statistics menu
+                                <span class="glyphicon glyphicon-link" aria-hidden="true"></span> Меню статистики
                             </button> 
                         </form>
                     </td>
@@ -85,11 +85,11 @@
                     if (user != null) {
                         if (user.getAdmin().equals("admin")) {
                             out.write("<tr>");
-                            out.write("<td>User operations</td>");
+                            out.write("<td>Работа с пользователями</td>");
                             out.write("<td>");
                             out.write("<form action=\"user-menu.jsp\">");
                             out.write("<button class=\"btn btn-warning btn-block\">");
-                            out.write("<span class=\"glyphicon glyphicon-user\" aria-hidden=\"true\"></span> User menu");
+                            out.write("<span class=\"glyphicon glyphicon-user\" aria-hidden=\"true\"></span> Пользователи");
                             out.write("</button>");
                             out.write("</form>");
                             out.write("</td>");
@@ -102,7 +102,7 @@
 
             <form class="form-signin" method="GET" action="/equilibrium/webresources/logout">
                 <button class="btn btn-info" type="submit">
-                    <span class="glyphicon glyphicon-off"></span> Log out
+                    <span class="glyphicon glyphicon-off"></span> Выйти
                 </button>
             </form>
         </div>

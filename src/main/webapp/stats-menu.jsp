@@ -21,7 +21,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Users menu</h3>
+            <h3>Меню статистики</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -79,7 +79,7 @@
 
             <form action="main-menu.jsp">
                 <button class="btn btn-info" type="submit">
-                    <span class="glyphicon glyphicon-home"></span> Back to main menu
+                    <span class="glyphicon glyphicon-home"></span> Вернуться в главное меню
                 </button>
             </form>
         </div>

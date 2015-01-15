@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Users operations menu</h3>
+            <h3>Меню управления назначениями</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -37,9 +37,9 @@
             <br>
 
             <form class="form-signin" method="GET" action="/equilibrium/webresources/links/create">
-                <input name = "paramCustomerName" type="text" id="login" class="form-control" placeholder="customer">   
+                <input name = "paramCustomerName" type="text" id="login" class="form-control" placeholder="заказчик">   
                 <br>
-                <input name = "paramSoftwareName" type="text" id="name" class="form-control" placeholder="software">
+                <input name = "paramSoftwareName" type="text" id="name" class="form-control" placeholder="программное обеспечение">
                 <br>
                 <br>
 
@@ -48,7 +48,7 @@
                         <td>
 
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-plus"></span> Create new link
+                                <span class="glyphicon glyphicon-plus"></span> Создать новое назначение
                             </button>
                             </form>
                         </td>
@@ -59,7 +59,7 @@
                         <td>
                             <form action="links-menu.jsp">
                                 <button class="btn btn-info">
-                                    <span class="glyphicon glyphicon-user"></span> Back to link menu
+                                    <span class="glyphicon glyphicon-user"></span> Вернуться в меню назначений
                                 </button>
                             </form>
                         </td>

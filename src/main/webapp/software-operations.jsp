@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Customers operations menu</h3>
+            <h3>Меню действий с программным обеспечением</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -36,12 +36,12 @@
             </h4>
             <br>
             <form class="form-signin" method="GET" action="/equilibrium/webresources/software/create">
-                <input name = "paramName" type="text" id="name" class="form-control" placeholder="name">
-                <input name = "paramLicense" type="text" id="license" class="form-control" placeholder="license"> 
-                <input name = "paramLicensePrice" type="text" id="licensePrice" class="form-control" placeholder="license price"> 
-                <input name = "paramCopyPrice" type="text" id="copyPrice" class="form-control" placeholder="copy price"> 
-                <input name = "paramSupportPrice" type="text" id="supportPrice" class="form-control" placeholder="support price">
-                <input name = "paramTotal" type="text" id="total" class="form-control" placeholder="total"> 
+                <input name = "paramName" type="text" id="name" class="form-control" placeholder="название">
+                <input name = "paramLicense" type="text" id="license" class="form-control" placeholder="лицензия"> 
+                <input name = "paramLicensePrice" type="text" id="licensePrice" class="form-control" placeholder="цена лицензии"> 
+                <input name = "paramCopyPrice" type="text" id="copyPrice" class="form-control" placeholder="цена копии"> 
+                <input name = "paramSupportPrice" type="text" id="supportPrice" class="form-control" placeholder="цена поддержки">
+                <input name = "paramTotal" type="text" id="total" class="form-control" placeholder="итого"> 
                 <br>          
 
                 <table>
@@ -49,7 +49,7 @@
                         <td>
 
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-user"></span> Create new software
+                                <span class="glyphicon glyphicon-user"></span> Создать новое ПО
                             </button>
                             </form>
                         </td>
@@ -60,7 +60,7 @@
                         <td>
                             <form action="software-menu.jsp">
                                 <button class="btn btn-info">
-                                    <span class="glyphicon glyphicon-user"></span> Back to software menu
+                                    <span class="glyphicon glyphicon-user"></span> Вернуться в меню ПО
                                 </button>
                             </form>
                         </td>
