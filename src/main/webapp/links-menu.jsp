@@ -85,6 +85,8 @@
 
                             // Out a cell with current project id
                             Integer totalBalance = 0;
+                            Integer totalPercentEurope = 0;
+                            Integer totalPercentWorld = 0;
                             for (int j = 0; j < linksList.size(); j++) {
                                 Link link = linksList.get(j);
                                 out.write("<tr>");
@@ -104,13 +106,20 @@
                                 out.write("<td>" + tempSoftware.getCopyPrice() + "</td>");
                                 out.write("<td>" + tempSoftware.getTotal()+ "</td>");
 
+                                //out.write("<td>" + tempSoftware.getPercentEurope() + "</td>");
+                                
                                 totalBalance = totalBalance + tempSoftware.getLicensePrice();
                                 totalBalance = totalBalance + tempSoftware.getCopyPrice() * tempSoftware.getTotal();
                                 totalBalance = totalBalance + tempSoftware.getSupportPrice()* tempSoftware.getTotal();
+                                
+                                totalPercentEurope = (totalPercentEurope  + tempSoftware.getPercentEurope()) / (j + 1);
+                                totalPercentWorld = (totalPercentWorld + tempSoftware.getPercentWorld() / (j + 1));
                             }
 
                             out.write("<tr>");
                             out.write("<td>" + "Итоговый баланс " + totalBalance + "</td>");
+                            out.write("<td>" + "Процент Европа: " + totalPercentEurope + "</td>");
+                            out.write("<td>" + "Процент Мир " + totalPercentWorld + "</td>");
                             out.write("</tr>");
 
                         }

@@ -86,6 +86,8 @@ CREATE TABLE `SOFTWARE` (
   `TOTAL` int(11) DEFAULT NULL,
   `DATE` date DEFAULT NULL,
   `USER_ID` varchar(255) DEFAULT NULL,
+  `PERCENT_EUROPE` int(11) DEFAULT NULL,
+  `PERCENT_WORLD` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -96,7 +98,7 @@ CREATE TABLE `SOFTWARE` (
 
 LOCK TABLES `SOFTWARE` WRITE;
 /*!40000 ALTER TABLE `SOFTWARE` DISABLE KEYS */;
-INSERT INTO `SOFTWARE` VALUES (1,'Wild office','GPL',0,10,15,100,'2014-12-29','1'),(2,'MS Office','Commercial',2500,100,30,100,'2014-12-29','1'),(3,'Google office','Commercial',1500,80,50,100,'2015-01-03','1'),(4,'Netrunner linux','GNU',0,35,85,100,'2015-01-03','2');
+INSERT INTO `SOFTWARE` VALUES (1,'Wild office','GPL',0,10,15,100,'2014-12-29','1',25,'50'),(2,'MS Office','Commercial',2500,100,30,100,'2014-12-29','1',35,'60'),(3,'Google office','Commercial',1500,80,50,100,'2015-01-03','1',45,'70'),(4,'Netrunner linux','GNU',0,35,85,100,'2015-01-03','2',55,'80'),(5,'Oracle Linux','Commercial',5000,500,1200,150,'2015-01-18','1',70,'90');
 /*!40000 ALTER TABLE `SOFTWARE` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -121,7 +123,7 @@ CREATE TABLE `STAT` (
 
 LOCK TABLES `STAT` WRITE;
 /*!40000 ALTER TABLE `STAT` DISABLE KEYS */;
-INSERT INTO `STAT` VALUES (1,'2015-01-03','User Nastya Yaroma create a new user with id: 2'),(2,'2015-01-03','User Sally Shapiro create a new customer with id: 3'),(3,'2015-01-03','User Sally Shapiro create a new software with id: 4'),(4,'2015-01-03','User Sally Shapiro create a new link with id: 4');
+INSERT INTO `STAT` VALUES (1,'2015-01-03','User Nastya Yaroma create a new user with id: 2'),(2,'2015-01-03','User Sally Shapiro create a new customer with id: 3'),(3,'2015-01-03','User Sally Shapiro create a new software with id: 4'),(4,'2015-01-03','User Sally Shapiro create a new link with id: 4'),(5,'2015-01-18','User Nastya Yaroma create a new software with id: 5');
 /*!40000 ALTER TABLE `STAT` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -162,4 +164,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-01-03 23:57:51
+-- Dump completed on 2015-01-18 18:21:33

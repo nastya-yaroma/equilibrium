@@ -52,6 +52,8 @@
                     <th>Цена поддержки</th>
                     <th>Итого</th>
                     <th>Дата</th>
+                    <th>Процент Европа</th>
+                    <th>Процент Мир</th>
                 </tr>
                 <%
                     SoftwareService softwareService = (SoftwareService) SpringFactory.getspringApplicationContext().getBean("softwareService");
@@ -85,6 +87,9 @@
                                 out.write("<td>" + date + "</td>");
                             }
 
+                            out.write("<td>" + software.getPercentEurope() + "</td>");
+                            out.write("<td>" + software.getPercentWorld() + "</td>");
+                            
                             out.write("</tr>");
                         }
 

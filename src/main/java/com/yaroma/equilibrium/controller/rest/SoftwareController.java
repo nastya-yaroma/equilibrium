@@ -25,7 +25,7 @@ public class SoftwareController {
     @GET
     @Path("create")
     @Produces("text/html")
-    public Response create(@QueryParam("paramName") String name, @QueryParam("paramLicense") String license, @QueryParam("paramLicensePrice") Integer licensePrice,  @QueryParam("paramCopyPrice") Integer copyPrice, @QueryParam("paramSupportPrice") Integer supportPrice, @QueryParam("paramTotal") Integer total) {
+    public Response create(@QueryParam("paramName") String name, @QueryParam("paramLicense") String license, @QueryParam("paramLicensePrice") Integer licensePrice,  @QueryParam("paramCopyPrice") Integer copyPrice, @QueryParam("paramSupportPrice") Integer supportPrice, @QueryParam("paramTotal") Integer total, @QueryParam("paramPercentEurope") Integer percentEurope, @QueryParam("paramPercentWorld") Integer percentWorld) {
         java.net.URI location = null;
 
         try {
@@ -42,6 +42,8 @@ public class SoftwareController {
             software.setTotal(total);
             software.setDate(new Date());
             software.setUserId(currentUser.getId());
+            software.setPercentEurope(percentEurope);
+            software.setPercentWorld(percentWorld);
 
             SoftwareService softwareService = (SoftwareService) SpringFactory.getspringApplicationContext().getBean("softwareService");
             softwareService.createSoftware(software);

@@ -41,7 +41,9 @@
                 <input name = "paramLicensePrice" type="text" id="licensePrice" class="form-control" placeholder="цена лицензии"> 
                 <input name = "paramCopyPrice" type="text" id="copyPrice" class="form-control" placeholder="цена копии"> 
                 <input name = "paramSupportPrice" type="text" id="supportPrice" class="form-control" placeholder="цена поддержки">
-                <input name = "paramTotal" type="text" id="total" class="form-control" placeholder="итого"> 
+                <input name = "paramTotal" type="text" id="total" class="form-control" placeholder="итого">
+                <input name = "paramPercentEurope" type="text" id="total" class="form-control" placeholder="процент Европа"> 
+                <input name = "paramPercentWorld" type="text" id="total" class="form-control" placeholder="процент Мир"> 
                 <br>          
 
                 <table>

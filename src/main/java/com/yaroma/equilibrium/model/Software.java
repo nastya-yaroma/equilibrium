@@ -26,6 +26,9 @@ public class Software {
     private Date date;
     private int userId;
     
+    private int percentEurope;
+    private int percentWorld;
+    
     public Software(){
         id = 0;
         name = DEFAULT_NAME;
@@ -133,5 +136,25 @@ public class Software {
     public void setUserId(int userId) {
         this.userId = userId;
     }
+
+    @Column (name="PERCENT_EUROPE")
+    public int getPercentEurope() {
+        return percentEurope;
+    }
+
+    public void setPercentEurope(int percentEurope) {
+        this.percentEurope = percentEurope;
+    }
+
+    @Column (name="PERCENT_WORLD")
+    public int getPercentWorld() {
+        return percentWorld;
+    }
+
+    public void setPercentWorld(int percentWorld) {
+        this.percentWorld = percentWorld;
+    }
+    
+    
     
 }
